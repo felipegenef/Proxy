@@ -5,6 +5,7 @@ app.use(express.json());
 app.post("/", async (req, res) => {
   try {
     const body = req.body;
+    console.log(req.body);
     console.log("Making request");
     const response = await axios.post(body.url, body);
     res.status(200).json(response.data);
